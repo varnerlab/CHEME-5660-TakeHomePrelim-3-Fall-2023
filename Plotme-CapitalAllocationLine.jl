@@ -1,8 +1,11 @@
 include("Include.jl")
 
+# TODO: specify the groupname -
+groupname = "NewCo";
+
 # load the efficient frontier data -
-dataset_ef = load(joinpath(_PATH_TO_DATA, "EfficientFrontier-NewCo-PD1-CHEME-5660-Fall-2023.jld2")) |> x->x["dataset"];
-dataset_cal = load(joinpath(_PATH_TO_DATA, "CapitalAllocationLine-NewCo-PD1-CHEME-5660-Fall-2023.jld2")) |> x->x["dataset"];
+dataset_ef = load(joinpath(_PATH_TO_DATA, "EfficientFrontier-$(groupname)-PD1-CHEME-5660-Fall-2023.jld2")) |> x->x["dataset"];
+dataset_cal = load(joinpath(_PATH_TO_DATA, "CapitalAllocationLine-$(groupname)-PD1-CHEME-5660-Fall-2023.jld2")) |> x->x["dataset"];
 
 
 # plot -
@@ -16,4 +19,4 @@ xlabel!("Annual Excess Risk (portfolio standard deviation)", fontsize=18);
 ylabel!("Annual Expected Excess Return", fontsize=18);
 
 # save -
-savefig(p, joinpath(_PATH_TO_FIGS, "CapitalAllocationLine-NewCo-PD1-CHEME-5660-Fall-2023.pdf"))
+savefig(p, joinpath(_PATH_TO_FIGS, "CapitalAllocationLine-$(groupname)-PD1-CHEME-5660-Fall-2023.pdf"))

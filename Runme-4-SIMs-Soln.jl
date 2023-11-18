@@ -76,5 +76,8 @@ function main(; risk_free_rate::Float64 = 0.05, Δt::Float64 = (1.0/252.0),
     return nothing;
 end
 
+# TODO: specify the groupname -
+groupname = "NewCo";
+
 # run the main function -
-main(groupname = "NewCo", enddate = Date(2023,01,01));
+main(groupname = groupname, enddate = Date(2023,01,01));

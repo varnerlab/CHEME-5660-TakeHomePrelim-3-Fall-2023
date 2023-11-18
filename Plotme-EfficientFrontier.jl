@@ -1,7 +1,10 @@
 include("Include.jl")
 
+# TODO: specify the groupname -
+groupname = "NewCo";
+
 # load the efficient frontier data -
-dataset = load(joinpath(_PATH_TO_DATA, "EfficientFrontier-NewCo-PD1-CHEME-5660-Fall-2023.jld2")) |> x->x["dataset"];
+dataset = load(joinpath(_PATH_TO_DATA, "EfficientFrontier-$(groupname)-PD1-CHEME-5660-Fall-2023.jld2")) |> x->x["dataset"];
 
 # plot -
 p = plot();
@@ -11,4 +14,4 @@ xlabel!("Annual Risk (portfolio standard deviation)", fontsize=18);
 ylabel!("Annual Expected Excess Return", fontsize=18);
 
 # save -
-savefig(p, joinpath(_PATH_TO_FIGS, "EfficientFrontier-NewCo-PD1-CHEME-5660-Fall-2023.pdf"))
+savefig(p, joinpath(_PATH_TO_FIGS, "EfficientFrontier-$(groupname)-PD1-CHEME-5660-Fall-2023.pdf"))

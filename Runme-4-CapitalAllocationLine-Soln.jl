@@ -151,5 +151,8 @@ end
 # TODO: specify the tickers in your portfolio -
 mytickers = ["PFE", "MRK", "AMD"]; # UPDATE THIS LIST OF TICKERS
 
+# TODO: specify the groupname -
+groupname = "NewCo";
+
 # run the main function -
-main(groupname = "NewCo", enddate = Date(2023,01,01), my_list_of_tickers = mytickers);
+main(groupname = groupname, enddate = Date(2023,01,01), my_list_of_tickers = mytickers);
